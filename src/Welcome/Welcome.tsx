@@ -6,7 +6,6 @@ const useStyles = createStyles((theme) => ({
   wrapper: {
     maxWidth: rem(400),
     width: '100%',
-    height: rem(180),
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
