@@ -1,10 +1,6 @@
-import { NumberInput } from "@mantine/core";
+import { NumberInput, Stack } from "@mantine/core";
 import { useState } from "react";
 
-interface QuantityInputProps {
-    min?: number;
-    max?: number;
-  }
 
 export function Formulaire() {
 
@@ -34,7 +30,7 @@ export function Formulaire() {
       
 
   return (
-    <div>
+    <Stack spacing="sm">
             <NumberInput
       value={age}
       onChange={handleAgeChange}
@@ -53,6 +49,7 @@ export function Formulaire() {
       withAsterisk
       min={0}
     />
-    </div>
+    
+    </Stack>
   );
 }
