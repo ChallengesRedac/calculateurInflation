@@ -1,5 +1,6 @@
 import { Button, Stack, Text } from '@mantine/core';
 import { createStyles, getStylesRef, rem } from '@mantine/core';
+import { Formulaire } from '../Formulaire';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -30,7 +31,7 @@ export function Welcome() {
 
   return (
     <div className={classes.wrapper}>
-      Coucou
+      <Formulaire />
     </div>
   );
 }
