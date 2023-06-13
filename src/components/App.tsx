@@ -1,5 +1,6 @@
 import { createStyles, getStylesRef, rem } from '@mantine/core';
 import { Formulaire } from './Formulaire';
+import { ThemeProvider } from '../ThemeProvider';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -20,8 +21,6 @@ const useStyles = createStyles((theme) => ({
       },
     },
   },
-
-  
 }));
 
 export default function App() {
@@ -29,7 +28,9 @@ export default function App() {
 
   return (
     <div className={classes.wrapper}>
-      <Formulaire />
+      <ThemeProvider>
+        <Formulaire />
+      </ThemeProvider>
     </div>
   );
 }
