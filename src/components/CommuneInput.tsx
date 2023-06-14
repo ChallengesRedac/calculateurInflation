@@ -14,11 +14,9 @@ export function CommuneInput({ value, onChange }: CommuneInputProps) {
       label="Taille de l'aire urbaine où vous vivez :"
       placeholder="Taille de l'aire urbaine où vous vivez :"
       data={[
-        { value: 'Rural', label: 'Rural' },
-        { value: 'Petite ville', label: 'Petite ville' },
+        { value: 'Rural ou petite ville', label: 'Rural ou petite ville' },
         { value: 'Moyenne ville', label: 'Moyenne ville' },
         { value: 'Grande ville', label: 'Grande ville' },
-        { value: 'Agglomération parisienne', label: 'Agglomération parisienne' },
       ]}
     />
   );
