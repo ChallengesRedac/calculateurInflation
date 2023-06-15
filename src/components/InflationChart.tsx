@@ -18,7 +18,7 @@ const InflationChart = ({ data }: { data: any[] }) => {
     <LineChart width={400} height={300} data={filteredData}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" tickFormatter={xAxisFormatter} />
-      <YAxis tickFormatter={yAxisFormatter} domain={[2, 'auto']} />
+      <YAxis tickFormatter={yAxisFormatter} domain={[2, 8]} />
       <Tooltip formatter={tooltipFormatter} />
       <Legend />
       <Line

@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Stack, Text } from '@mantine/core';
-import data from '../data/inflationAnalysis_up_to2023-05.json';
-import { arrayVariables } from '../libs/arrayVariable';
 import { excesInflation } from '../libs/excesInflation';
 import InflationChart from './InflationChart';
 import calculerMoyenne from '../libs/calculerMoyenne';
@@ -56,13 +54,27 @@ export function Results({
   return (
     <Stack>
       <Text>
-        Avec votre profil, vous faites partie des Français et Françaises un peu{' '}
-        {rapport <= 0 ? 'moins' : 'plus'} touchés par l'inflation. En effet, les personnes avec
-        votre profil ont subi en moyenne une inflation {Math.abs(rapport * 100).toFixed(1)} % plus
-        {rapport <= 0 ? ' faible' : ' élevée'} que la moyenne sur l'année écoulée.
+        <p>
+          Avec votre profil, vous faites partie des Français et Françaises{' '}
+          <strong>un peu {rapport <= 0 ? 'moins' : 'plus'}</strong> touchés par l'inflation.{' '}
+        </p>
+        <p>
+          En effet, les personnes avec votre profil ont subi en moyenne une inflation{' '}
+          <strong>{Math.abs(rapport * 100).toFixed(1)} % </strong> plus
+          {rapport <= 0 ? ' faible' : ' élevée'} que la moyenne sur l'année écoulée.
+        </p>
       </Text>
       <InflationChart data={excessesInflation} />
-      <TableResults />
+      <TableResults
+        NENFANTS={NENFANTS}
+        age={age as number}
+        enCouple={enCouple}
+        commune={commune}
+        voisinage={voisinage}
+        niveauVie={niveauVie}
+        chauffage={chauffage}
+        proprietaire={proprietaire}
+      />
     </Stack>
   );
 }
