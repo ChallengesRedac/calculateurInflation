@@ -1,4 +1,4 @@
-import { Button, Stack, Text } from '@mantine/core';
+import { Button, Stack, Text, Title } from '@mantine/core';
 import { useState } from 'react';
 import { AgeInput } from './AgeInput';
 import { NbrEnfantsInput } from './NbrEnfantsInput';
@@ -21,7 +21,7 @@ export function Formulaire() {
   const [proprietaire, setProprietaire] = useState<string>('Locataire');
   const [formulaireValide, setFormulaireValide] = useState<boolean>(false);
 
-  const minAge = 5;
+  const minAge = 18;
   const maxAge = 100;
   const minNbrEnfants = 0;
   const maxNbrEnfants = 20;
@@ -43,10 +43,11 @@ export function Formulaire() {
 
   return (
     <Stack spacing="sm">
+      <Title>Faites-vous partie des Français les plus touchés par l'inflation ?</Title>
       {!formulaireValide && (
         <>
           <Text c="dimmed" fz="sm">
-            Aucune donnée ne quitte votre navigateur.
+            Aucune donnée personnelle ne quitte votre navigateur.
           </Text>
           <AgeInput value={age} onChange={setAge} minAge={minAge} maxAge={maxAge} />
           <NbrEnfantsInput
