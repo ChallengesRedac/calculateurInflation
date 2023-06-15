@@ -1,7 +1,9 @@
-import React from 'react';
-import { Text } from '@mantine/core';
+import React, { useEffect, useState } from 'react';
+import { Stack, Text } from '@mantine/core';
 import data from '../data/inflationAnalysis_up_to2023-05.json';
 import { arrayVariables } from '../libs/arrayVariable';
+import { excesInflation } from '../libs/excesInflation';
+import InflationChart from './InflationChart';
 
 export interface ResultsProps {
   NENFANTS: number;
@@ -23,9 +25,12 @@ export function Results({
   chauffage,
   proprietaire,
 }: ResultsProps) {
-  console.log(data['2023-01']); // You can view the loaded data in the browser console
-  console.log(
-    arrayVariables({
+  const [excessesInflation, setExcessesInflation] = useState<any[]>([]);
+  let derniereInflation = 0;
+  let dernierExces = 0;
+
+  useEffect(() => {
+    const calculatedValue = excesInflation({
       NENFANTS,
       age,
       enCouple,
@@ -34,7 +39,22 @@ export function Results({
       niveauVie,
       chauffage,
       proprietaire,
-    })
+    });
+
+    setExcessesInflation(calculatedValue);
+    derniereInflation = calculatedValue[calculatedValue.length - 1].inflation;
+    dernierExces = calculatedValue[calculatedValue.length - 1].excess;
+    console.log(dernierExces);
+  }, []);
+
+  return (
+    <Stack>
+      <Text>
+        Vous faites partie des Français et Françaises un peu {dernierExces <= 0 ? 'moins' : 'plus'}{' '}
+        touchés par l'inflation. "Les Français et les Françaises avec votre profil ont en moyenne
+        une inflation un peu moins forte que la population"
+      </Text>
+      <InflationChart data={excessesInflation} />
+    </Stack>
   );
-  return <Text>{}</Text>;
 }
