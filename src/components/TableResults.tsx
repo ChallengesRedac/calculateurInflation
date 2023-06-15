@@ -45,8 +45,9 @@ export function TableResults({
           <Accordion.Panel>
             <Stack>
               <Text>
-                Par exemple, voici l'impact de l'appartenance à différentes catégories sur le taux
-                d'inflation en novembre 2022, en comparant à un groupe de référence.
+                Pour estimer si votre profil vous classe dans ceux qui subissent le plus ou moins
+                l'inflation, on peut regarder, variable après variable, la différence avec un groupe
+                de référence. Un exemple ici, en novembre 2022, au pic de l'inflation :
               </Text>
               <Text c="dimmed" fz="sm">
                 Régression linéaire multiple, avec une significativité à 5%.
