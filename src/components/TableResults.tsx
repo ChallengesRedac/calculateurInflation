@@ -1,6 +1,7 @@
 import { Stack, Table, Title, Text, Accordion } from '@mantine/core';
 import { ResultsProps } from './Results';
 import { arrayVariables } from '../libs/arrayVariable';
+import { InfoCircle, InfoSquare } from 'tabler-icons-react';
 
 const elements = [
   { name: 'Carbon', coeff: 0.8 },
@@ -40,7 +41,9 @@ export function TableResults({
       <Accordion>
         <Accordion.Item value="customization">
           <Accordion.Control>
-            <Title order={2}>Détail pour votre profil : </Title>
+            <Title order={2}>
+              <InfoCircle size={29} /> Détail pour votre profil{' '}
+            </Title>
           </Accordion.Control>
           <Accordion.Panel>
             <Stack>
