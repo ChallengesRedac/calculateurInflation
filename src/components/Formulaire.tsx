@@ -81,6 +81,10 @@ export function Formulaire() {
           proprietaire={proprietaire}
         />
       )}
+      <Text c="dimmed" fz="sm">
+        Source : travaux à partir de l'enquête Budget des familles de l'Insee et indice des prix
+        harmonisés de l'Insee. Régression linéaire multiple, avec une significativité à 5%.
+      </Text>
     </Stack>
   );
 }

@@ -59,9 +59,10 @@ export function Results({
           <strong>un peu {rapport <= 0 ? 'moins' : 'plus'}</strong> touchés par l'inflation.{' '}
         </p>
         <p>
-          En effet, les personnes avec votre profil ont subi en moyenne une inflation{' '}
+          En effet, les personnes avec votre profil ont connu, en moyenne, une inflation{' '}
           <strong>{Math.abs(rapport * 100).toFixed(1)} % </strong> plus
-          {rapport <= 0 ? ' faible' : ' élevée'} que la moyenne sur l'année écoulée.
+          {rapport <= 0 ? ' faible' : ' élevée'} que l'inflation de la population générale sur
+          l'année écoulée.
         </p>
       </Text>
       <InflationChart data={excessesInflation} />

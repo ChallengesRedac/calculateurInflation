@@ -48,6 +48,9 @@ export function TableResults({
                 Par exemple, voici l'impact de l'appartenance à différentes catégories sur le taux
                 d'inflation en novembre 2022, en comparant à un groupe de référence.
               </Text>
+              <Text c="dimmed" fz="sm">
+                Régression linéaire multiple, avec une significativité à 5%.
+              </Text>
               <Title order={3}>Nombre d'enfants</Title>
               <Table>
                 <tr>
@@ -135,7 +138,6 @@ export function TableResults({
                 <tr>
                   <td>
                     {arrayVariable[7] + arrayVariable[8] === 0 ? <strong>Moyen</strong> : 'Moyen'}
-                    Moyen
                   </td>
                   <td>Référence</td>
                 </tr>
