@@ -114,24 +114,69 @@ export function Results({
       {!detail && (
         <>
           <Text>
-            <p>
-              Vous faites partie des Français et Françaises{' '}
-              <strong>un peu {rapport <= 0 ? 'moins' : 'plus'}</strong> touchés par l'inflation.{' '}
-            </p>
-            <p>
-              En effet, les personnes avec votre profil ont connu, en moyenne, une inflation{' '}
-              <strong>{Math.abs(rapport * 100).toFixed(1)} % </strong> plus
-              {rapport <= 0 ? ' faible' : ' élevée'} que l'inflation de la population générale sur
-              l'année écoulée.
-            </p>
+            {rapport == 0 ? (
+              <p>
+                Selon votre profil, vous êtes dans la moyenne de l'inflation qu'ont subi les
+                Français et les Françaises.
+              </p>
+            ) : (
+              <>
+                <p>
+                  Vous faites partie des Français et Françaises{' '}
+                  <strong>un peu {rapport < 0 ? 'moins' : 'plus'}</strong> touchés par l'inflation.{' '}
+                </p>
+                <p>
+                  En effet, les personnes avec votre profil ont connu, en moyenne, une inflation{' '}
+                  <strong>{Math.abs(rapport * 100).toFixed(1)} % </strong> plus
+                  {rapport <= 0 ? ' faible' : ' élevée'} que l'inflation de la population générale
+                  sur l'année écoulée.
+                </p>
+              </>
+            )}
           </Text>
           <InflationChart data={excessesInflation} />
           <Stack>
             <Title order={2}>Pourquoi ?</Title>
+            {rapport === 0 ? (
+              ''
+            ) : (
+              <Text>
+                {rapport <= 0 ? (
+                  <>
+                    Certaines de vos variables vous font appartenir à des groupes moins touchés par
+                    l'inflation, comme par exemple :
+                    <ul>
+                      {arrayVariable[1] === 1 || arrayVariable[2] === 1 ? <li>Votre âge</li> : ''}
+                      {arrayVariable[6] === 1 ? <li>La taille de votre aire urbaine</li> : ''}
+                      {arrayVariable[8] === 1 ? <li>Votre niveau de vie</li> : ''}
+                      {arrayVariable[11] === 1 || arrayVariable[12] === 1 ? (
+                        <li>Votre type de chauffage</li>
+                      ) : (
+                        ''
+                      )}
+                    </ul>
+                  </>
+                ) : (
+                  <>
+                    Certaines de vos variables vous font appartenir à des groupes plus touchés par
+                    l'inflation, comme par exemple :
+                    <ul>
+                      {arrayVariable[0] > 0 ? <li>Votre nombre d'enfants</li> : ''}
+                      {arrayVariable[3] === 1 || arrayVariable[4] === 1 ? <li>Votre âge</li> : ''}
+                      {arrayVariable[5] === 1 ? <li>La taille de votre aire urbaine</li> : ''}
+                      {arrayVariable[7] === 1 ? <li>Votre niveau de vie</li> : ''}
+                      {arrayVariable[9] === 1 ? <li>Le fait d'habiter en couple</li> : ''}
+                      {arrayVariable[10] === 1 ? <li>Le fait d'être propriétaire</li> : ''}
+                      {arrayVariable[13] === 1 ? <li>Votre type de voisinage</li> : ''}
+                    </ul>
+                  </>
+                )}
+              </Text>
+            )}
             <Text>
-              Nous consommons différemment selon nos caractéristiques. Typiquement, les personnes
-              qui vivent hors des villes dépensent davantage de leur revenu en essence, ou les
-              personnes âgées davantage en chauffage. Deux postes de consommation qui ont eu une
+              En effet, nous consommons différemment selon nos caractéristiques. Par exemple, les
+              personnes qui vivent hors des villes dépensent davantage de leur revenu en essence, ou
+              les personnes âgées davantage en chauffage. Deux postes de consommation qui ont eu une
               inflation bien au-dessus de la normale, et qui explique donc les inégalités
               d'inflation.
             </Text>
@@ -139,7 +184,7 @@ export function Results({
               <Button onClick={handleReset} color="gray">
                 Recommencer
               </Button>
-              <Button onClick={() => setDetail(true)}>
+              <Button onClick={() => setDetail(true)} component="a" href="#">
                 Détail pour votre profil
                 <ArrowRight size={18} />
               </Button>
