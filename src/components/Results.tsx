@@ -16,6 +16,14 @@ export interface ResultsComponentProps {
   chauffage: string;
   proprietaire: string;
   formulaireValide: boolean;
+  setAge: React.Dispatch<React.SetStateAction<number | ''>>;
+  setNbrEnfants: React.Dispatch<React.SetStateAction<number | ''>>;
+  setEnCouple: React.Dispatch<React.SetStateAction<string>>;
+  setCommune: React.Dispatch<React.SetStateAction<string>>;
+  setVoisinage: React.Dispatch<React.SetStateAction<string>>;
+  setNiveauVie: React.Dispatch<React.SetStateAction<string>>;
+  setChauffage: React.Dispatch<React.SetStateAction<string>>;
+  setProprietaire: React.Dispatch<React.SetStateAction<string>>;
   setFormulaireValide: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -39,6 +47,14 @@ export function Results({
   chauffage,
   proprietaire,
   formulaireValide,
+  setAge,
+  setNbrEnfants,
+  setEnCouple,
+  setCommune,
+  setVoisinage,
+  setNiveauVie,
+  setChauffage,
+  setProprietaire,
   setFormulaireValide,
 }: ResultsComponentProps) {
   const [excessesInflation, setExcessesInflation] = useState<any[]>([]);
@@ -48,7 +64,14 @@ export function Results({
   function handleReset(): void {
     setDetail(false);
     setFormulaireValide(false);
-
+    setAge('');
+    setNbrEnfants(0);
+    setEnCouple('false');
+    setCommune('');
+    setVoisinage('');
+    setNiveauVie('');
+    setChauffage('');
+    setProprietaire('Locataire');
   }
 
   let derniereInflation = 0;

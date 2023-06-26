@@ -21,6 +21,18 @@ export function Formulaire() {
   const [proprietaire, setProprietaire] = useState<string>('Locataire');
   const [formulaireValide, setFormulaireValide] = useState<boolean>(false);
 
+  const setterFunctions = {
+    setAge,
+    setNbrEnfants,
+    setEnCouple,
+    setCommune,
+    setVoisinage,
+    setNiveauVie,
+    setChauffage,
+    setProprietaire,
+    setFormulaireValide,
+  };
+
   const minAge = 18;
   const maxAge = 100;
   const minNbrEnfants = 0;
@@ -80,7 +92,7 @@ export function Formulaire() {
           chauffage={chauffage}
           proprietaire={proprietaire}
           formulaireValide={formulaireValide}
-          setFormulaireValide={setFormulaireValide}
+          {...setterFunctions}
         />
       )}
       <Text c="dimmed" fz="sm">
