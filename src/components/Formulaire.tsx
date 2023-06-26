@@ -79,6 +79,8 @@ export function Formulaire() {
           niveauVie={niveauVie}
           chauffage={chauffage}
           proprietaire={proprietaire}
+          formulaireValide={formulaireValide}
+          setFormulaireValide={setFormulaireValide}
         />
       )}
       <Text c="dimmed" fz="sm">

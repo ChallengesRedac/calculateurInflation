@@ -13,7 +13,7 @@ export function VoisinageInput({ value, onChange }: VoisinageInputProps) {
       label="Votre voisinage est :"
       placeholder="Votre voisinage est :"
       data={[
-        { value: 'Pavillonnaire', label: 'Plutôt pavillonnaire' },
+        { value: 'Pavillonnaire', label: 'Plutôt pavillonnaire ou isolé' },
         { value: 'Immeubles', label: 'Plutôt des immeubles' },
       ]}
     />
