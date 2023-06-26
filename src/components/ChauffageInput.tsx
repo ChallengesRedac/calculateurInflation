@@ -16,7 +16,10 @@ export function ChauffageInput({ value, onChange }: ChauffageInputProps) {
       data={[
         { value: 'Chauffage collectif', label: 'Chauffage collectif' },
         { value: 'Chauffage électrique individuel', label: 'Chauffage électrique individuel' },
-        { value: 'Chauffage non-électrique', label: 'Chauffage non-électrique' },
+        {
+          value: 'Chauffage non-électrique',
+          label: 'Chauffage non-électrique (gaz, poêle à bois, etc.)',
+        },
         // ajoutez d'autres types de chauffage ici
       ]}
     />

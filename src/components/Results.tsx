@@ -286,7 +286,7 @@ export function Results({
             <Table>
               <tr>
                 <td>
-                  {arrayVariable[10] + arrayVariable[11] === 0 ? (
+                  {arrayVariable[11] + arrayVariable[12] === 0 ? (
                     <strong>Chauffage collectif</strong>
                   ) : (
                     'Chauffage collectif'
@@ -296,7 +296,7 @@ export function Results({
               </tr>
               <tr>
                 <td>
-                  {arrayVariable[10] === 1 ? (
+                  {arrayVariable[11] === 1 ? (
                     <strong>Chauffage électrique individuel</strong>
                   ) : (
                     'Chauffage électrique individuel'
@@ -306,7 +306,7 @@ export function Results({
               </tr>
               <tr>
                 <td>
-                  {arrayVariable[11] === 1 ? (
+                  {arrayVariable[12] === 1 ? (
                     <strong>Chauffage non-électrique</strong>
                   ) : (
                     'Chauffage non-électrique'
@@ -319,7 +319,7 @@ export function Results({
             <Table>
               <tr>
                 <td>
-                  {arrayVariable[12] === 0 ? (
+                  {arrayVariable[13] === 0 ? (
                     <strong>Plutôt des immeubles</strong>
                   ) : (
                     'Plutôt des immeubles'
@@ -329,8 +329,8 @@ export function Results({
               </tr>
               <tr>
                 <td>
-                  {arrayVariable[12] === 1 ? (
-                    <strong>Plutôt pavillonaire</strong>
+                  {arrayVariable[13] === 1 ? (
+                    <strong>Plutôt pavillonnaire</strong>
                   ) : (
                     'Plutôt pavillonnaire'
                   )}
