@@ -1,5 +1,5 @@
 import { ResultsProps } from '../components/Results';
-import data from '../data/inflationAnalysis_up_to2023-05.json';
+import data from '../data/inflationAnalysis_up_to2023-06.json';
 import { arrayVariables } from './arrayVariable';
 
 export function excesInflation({
