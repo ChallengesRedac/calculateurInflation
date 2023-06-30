@@ -96,8 +96,12 @@ export function Formulaire() {
         />
       )}
       <Text c="dimmed" fz="sm">
-        Source : travaux à partir de l'enquête Budget des familles de l'Insee et indice des prix
-        harmonisés de l'Insee. Régression linéaire multiple, avec une significativité à 5%.
+        Source : travaux à partir de{' '}
+        <a href="https://www.insee.fr/fr/statistiques/4648339">
+          l'enquête Budget des familles 2017 de l'Insee
+        </a>{' '}
+        et indice des prix harmonisés de l'Insee. Régression linéaire multiple, avec une
+        significativité à 5%.
       </Text>
     </Stack>
   );
