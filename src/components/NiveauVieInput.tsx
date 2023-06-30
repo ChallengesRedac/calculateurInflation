@@ -15,7 +15,7 @@ export function NiveauVieInput({ value, onChange }: NiveauVieInputProps) {
       placeholder="Niveau de vie"
       data={[
         { value: 'Faible', label: 'Faible (- de 16k€/an/individu)' },
-        { value: 'Moyen', label: 'Moyen (de 16 à 35k€/an/individu' },
+        { value: 'Moyen', label: 'Moyen (de 16 à 35k€/an/individu)' },
         { value: 'Riche', label: 'Elevé (+ de 35k€/an/individu)' },
       ]}
     />

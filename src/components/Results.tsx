@@ -135,6 +135,10 @@ export function Results({
             )}
           </Text>
           <InflationChart data={excessesInflation} />
+          <Text c="dimmed" fz="sm">
+            Les données d'inflation s'arrêtent au mois de mai, date des derniers chiffres définitifs
+            de l'Insee.
+          </Text>
           <Stack>
             <Title order={2}>Pourquoi ?</Title>
             {rapport === 0 ? (
@@ -181,7 +185,7 @@ export function Results({
               d'inflation.
             </Text>
             <Flex gap="md">
-              <Button onClick={handleReset} color="gray">
+              <Button onClick={handleReset} color="gray" component="a" href="#">
                 Recommencer
               </Button>
               <Button onClick={() => setDetail(true)} component="a" href="#">

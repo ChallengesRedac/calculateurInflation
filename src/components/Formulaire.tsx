@@ -75,7 +75,7 @@ export function Formulaire() {
           <ChauffageInput value={chauffage} onChange={setChauffage} />
           <ProprietaireInput value={proprietaire} onChange={setProprietaire} />
 
-          <Button disabled={!isFormComplete} onClick={handleClick}>
+          <Button disabled={!isFormComplete} onClick={handleClick} component="a" href="#">
             Valider
           </Button>
         </>
