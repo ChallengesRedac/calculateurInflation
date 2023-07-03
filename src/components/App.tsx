@@ -5,7 +5,7 @@ import { ThemeProvider } from '../ThemeProvider';
 const useStyles = createStyles((theme) => {
   return {
     wrapper: {
-      maxWidth: rem(400),
+      maxWidth: rem(350),
       width: '100%',
       display: 'flex',
       alignItems: 'center',
